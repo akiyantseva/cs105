@@ -1,0 +1,60 @@
+/* _survey.scss */
+
+.survey {
+	font-size: 32pt;
+	margin: 0px auto;
+	margin-top: 16%;
+	text-align: center;
+}
+
+form {
+	margin: 0px auto;
+	width: 40%;
+	padding: 30px 5px 30px 5px;
+	border-radius: 40px;
+	background-color: lighten($nightblue, 32%);
+}
+
+.mob-info {
+	font-size: 16pt;
+	font-weight: 300;
+	color: darken($nightblue, 10%);
+	font-style: italic;
+}
+
+form:hover {
+	background-color: lighten($nightblue, 35%);
+}
+
+input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 13px;
+  margin: 30px 1px 0px 0px;
+  border: 1px solid #DDDDDD;
+  border-radius: 30px;
+  font-size: 24pt;
+  width: 80%;
+}
+
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px $nightblue;
+  padding: 3px 0px 3px 13px;
+  margin: 30px 1px 0px 0px;
+  border: 1px solid $nightblue;
+}
+
+.hidden-forms {
+	display: none;
+}
+
+.tiny-text {
+	font-size: 10pt;
+	font-weight: 300;
+	line-height: 8pt;
+	position: relative;
+	top: -12px;
+}

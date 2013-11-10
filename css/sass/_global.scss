@@ -1,0 +1,33 @@
+/* _global.scss */
+
+$skyblue: #8DE9F7;
+$nightblue: #1C9DED;
+$gray: #505657;
+
+body {	
+	font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 16pt;
+	a {
+		color: $skyblue;
+	}
+
+	a:hover {
+		color: darken($skyblue, 20%);
+	}
+
+	margin: 0px auto;
+	color: $gray;
+	strong {
+		font-weight: 700;
+	}
+	em {
+		font-style: italic;
+	}
+	.light {
+		font-weight: 300;
+	}
+	p {
+		margin-bottom: 15px;
+	}
+}
+

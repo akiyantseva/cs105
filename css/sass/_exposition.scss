@@ -1,0 +1,87 @@
+/* _exposition.scss */
+
+.centered {
+	text-align: center;
+}
+
+.exposition {
+	margin: 0px auto;
+	margin-top: 2%;
+	width: 70%;
+}
+
+ul {
+	list-style-type: disc;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	width: 85%;
+	line-height: 28px;
+	font-size: 18pt;
+}
+
+ul li {
+	margin: 15px 40px 15px 40px;
+}
+
+.very-large-text {
+	font-size: 48pt;
+	font-weight: 700;
+	line-height: 56pt;
+}
+
+.large-text {
+	font-size: 28pt;
+}
+
+.small-text {
+	font-size: 12pt;
+}
+
+.bright {
+	color: $skyblue;
+}
+
+.dark {
+	color: $nightblue;
+}
+
+input[type=email] {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 13px;
+  margin: 0px 1px 0px 0px;
+  border: 1px solid #DDDDDD;
+  border-radius: 30px;
+  font-size: 16pt;
+}
+
+input[type=email]:focus {
+  box-shadow: 0 0 5px $nightblue;
+  padding: 3px 0px 3px 13px;
+  margin: 0px 1px 0px 0px;
+  border: 1px solid $nightblue;
+}
+
+input[type=submit] {
+	background-color: $skyblue;
+	border-radius: 30px;
+	border: none;
+	padding: 7px 20px 7px 20px;
+	color: white;
+	position: relative;
+	top: -3px;
+	font-size: 12pt;
+}
+
+input[type=submit]:hover {
+	background-color: darken($skyblue, 10%);
+}
+
+input[type=submit]:active {
+	background-color: darken($skyblue, 20%);
+}
+
+

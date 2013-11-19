@@ -34,11 +34,11 @@
 
         <div id = "current-form">
 
-            <form id ="1" action="survey.php" method="post">
-            <input type="hidden" name="topic" value="First Name"/>
+            <form id ="1">
+            <input type="hidden" topic="First Name" class="topic" name="topic"/>
             <label> First Name </label> <br/>
             <span class = "mob-info">X other people have answered this. </span>
-            <input name="response" type="text" autofocus="autofocus"/><br/>
+            <input type="text" autofocus="autofocus" class="response"/><br/>
             <span class ="tiny-text">Press Enter to submit.</span>
 
             <input type="submit" style="position: absolute; left: -9999px"/>
@@ -48,104 +48,118 @@
 
         </section>
 
-    <div class = "hidden-forms">
+    <div style = "display:none" class = "hidden-forms">
 
-        <form id ="2" action="survey.php" method="post">
+        <form id ="2">
+        <input type="hidden" topic="Last Name" class="topic" name="topic"/>
         <label> Last Name </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
 
         </form> 
 
-        <form id ="3" action="survey.php" method="post"> 
+        <form id ="3">
+        <input type="hidden" topic="Last Name" class="topic" name="topic"/> 
         <label> E-mail Address </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
 
         <form id ="4" action="survey.php" method="post">
+        <input type="hidden" topic="Birth Month" class="topic" name="topic"/>
         <label> Birth Month </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
 
         <form id ="5" action="survey.php" method="post">
+        <input type="hidden" topic="Birth Year" class="topic" name="topic"/>
         <label> Birth Year </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
 
         <form id ="6" action="survey.php" method="post">
+        <input type="hidden" topic="Birth Date" class="topic" name="topic"/>
         <label> Birth Date (MM/DD/YYYY) </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
         
         <form id ="7" action="survey.php" method="post">
+        <input type="hidden" topic="Age" class="topic" name="topic"/>
         <label> Age </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
 
         <form id ="8" action="survey.php" method="post">
+        <input type="hidden" topic="High School" class="topic" name="topic"/>
         <label> Name of High School </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
 
         <form id ="9" action="survey.php" method="post">
+        <input type="hidden" topic="University" class="topic" name="topic"/>
         <label> Name of University (if attended; "none" if not) </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
 
         <form id ="10" action="survey.php" method="post">
+        <input type="hidden" topic="Current Country" class="topic" name="topic"/>
         <label> Name of Current Country</label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
        
         <form id ="11" action="survey.php" method="post">
+        <input type="hidden" topic="Hometown Name" class="topic" name="topic"/>
         <label> Hometown Name </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form>  
 
         <form id ="12" action="survey.php" method="post">
+        <input type="hidden" topic="Father's First Name" class="topic" name="topic"/>
         <label> Father's First Name </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
 
         <form id ="13" action="survey.php" method="post">
+        <input type="hidden" topic="Mother's First Name" class="topic" name="topic"/>
         <label> Mother's First Name </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
 
         <form id ="14" action="survey.php" method="post">
+        <input type="hidden" topic="Health Insurance Provider" class="topic" name="topic"/>
         <label> Health Insurance Provider </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
 
         <form id ="15" action="survey.php" method="post">
+        <input type="hidden" topic="Mother's Maiden Name" class="topic" name="topic"/>
         <label> Mother's Maiden Name </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input type="text"><br>
+        <input name="response" type="text" autofocus="autofocus"/><br/>
         <span class ="tiny-text">Press Enter to submit.</span>
         </form> 
 

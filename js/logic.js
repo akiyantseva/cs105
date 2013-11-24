@@ -1,14 +1,19 @@
 counter = 1;
 completedForms = new Object();
 
+topic = [];
+response = [];
+mob = [];
+time = [];
+
 mobMode = 1;
 timeMode = 1;
 
-// on enter
+/*// on enter
 $('form').keypress(function (e) {
     if (e.which == 13) {
 
-    // ajax send topic and response to php
+    // ajax send info to php
     $.ajax({
             type: "POST",
             url: "survey.php",
@@ -18,8 +23,8 @@ $('form').keypress(function (e) {
             + "\u0026time=" + $('#current-form .info').attr("time"),
             success: nextForm
         })
-    }
-});
+    };
+});*/
 
 
 $(function() {
@@ -39,8 +44,8 @@ else {
 
 });
 
-//$("#current-form").submit(function( event ) {
-function nextForm() {
+$("#current-form").submit(function( event ) {
+//function nextForm() {
     completed = new Boolean;
 
     if ( $("#current-form input").val() !== "" ) {
@@ -52,6 +57,11 @@ function nextForm() {
 
     completedForms[counter] = completed;
     console.log(completedForms[counter]);
+
+    topic[counter] = $('#current-form .info').attr("topic");
+    response[counter] = $('#current-form .info').attr("response");
+    mob[counter] = $('#current-form .info').attr("mob");
+    time[counter] = $('#current-form .info').attr("time"); 
 
     counter ++;
 
@@ -65,7 +75,19 @@ function nextForm() {
         $("#current-form *").replaceWith($("#finish-survey"));
     }
 
-}
+});
+
+$('#finish-submit-button').click(function( event ) {
+    $.ajax({
+            type: "POST",
+            url: "survey.php",
+            data: "topic=" + $topic 
+            + "\u0026response=" + $response
+            + "\u0026mob=" + $mob 
+            + "\u0026time=" + $time,
+        })
+});
+
 
 $('.consent-box input').click(function(){
     if ($("#consent-box").is (':checked'))

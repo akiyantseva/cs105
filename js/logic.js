@@ -62,8 +62,7 @@ function nextForm() {
         $("#current-form *").replaceWith($("#finish-survey"));
     }
 
-});
-
+}
 
 $('.consent-box input').click(function(){
     if ($("#consent-box").is (':checked'))

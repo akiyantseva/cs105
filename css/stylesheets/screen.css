@@ -128,11 +128,18 @@ form {
 }
 
 /* line 25, ../sass/_survey.scss */
+.time-info {
+  font-size: 16pt;
+  font-weight: 300;
+  color: #0fc1dc;
+}
+
+/* line 31, ../sass/_survey.scss */
 form:hover {
   background-color: #c1e4fa;
 }
 
-/* line 29, ../sass/_survey.scss */
+/* line 35, ../sass/_survey.scss */
 input[type=text], textarea {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
@@ -147,7 +154,7 @@ input[type=text], textarea {
   width: 80%;
 }
 
-/* line 43, ../sass/_survey.scss */
+/* line 49, ../sass/_survey.scss */
 input[type=text]:focus, textarea:focus {
   box-shadow: 0 0 5px #1c9ded;
   padding: 3px 0px 3px 13px;
@@ -155,12 +162,12 @@ input[type=text]:focus, textarea:focus {
   border: 1px solid #1c9ded;
 }
 
-/* line 50, ../sass/_survey.scss */
+/* line 56, ../sass/_survey.scss */
 .hidden-forms {
   display: none;
 }
 
-/* line 54, ../sass/_survey.scss */
+/* line 60, ../sass/_survey.scss */
 .tiny-text {
   font-size: 10pt;
   font-weight: 300;
@@ -171,18 +178,24 @@ input[type=text]:focus, textarea:focus {
 
 /* _exposition.scss */
 /* line 3, ../sass/_exposition.scss */
+p {
+  line-height: 24pt;
+  margin-bottom: 20px;
+}
+
+/* line 8, ../sass/_exposition.scss */
 .centered {
   text-align: center;
 }
 
-/* line 7, ../sass/_exposition.scss */
+/* line 12, ../sass/_exposition.scss */
 .exposition {
   margin: 0px auto;
   margin-top: 2%;
   width: 70%;
 }
 
-/* line 13, ../sass/_exposition.scss */
+/* line 18, ../sass/_exposition.scss */
 ul {
   list-style-type: disc;
   margin-top: 25px;
@@ -192,39 +205,45 @@ ul {
   font-size: 18pt;
 }
 
-/* line 22, ../sass/_exposition.scss */
+/* line 27, ../sass/_exposition.scss */
 ul li {
   margin: 15px 40px 15px 40px;
 }
 
-/* line 26, ../sass/_exposition.scss */
+/* line 31, ../sass/_exposition.scss */
 .very-large-text {
   font-size: 48pt;
   font-weight: 700;
   line-height: 56pt;
 }
 
-/* line 32, ../sass/_exposition.scss */
+/* line 37, ../sass/_exposition.scss */
 .large-text {
   font-size: 28pt;
 }
 
-/* line 36, ../sass/_exposition.scss */
+/* line 41, ../sass/_exposition.scss */
 .small-text {
   font-size: 12pt;
 }
 
-/* line 40, ../sass/_exposition.scss */
+/* line 45, ../sass/_exposition.scss */
 .bright {
   color: #8de9f7;
 }
 
-/* line 44, ../sass/_exposition.scss */
+/* line 49, ../sass/_exposition.scss */
 .dark {
   color: #1c9ded;
 }
 
-/* line 48, ../sass/_exposition.scss */
+/* line 53, ../sass/_exposition.scss */
+.consent-form * {
+  font-size: 10pt;
+  line-height: 9pt;
+}
+
+/* line 58, ../sass/_exposition.scss */
 input[type=email] {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
@@ -238,7 +257,7 @@ input[type=email] {
   font-size: 16pt;
 }
 
-/* line 61, ../sass/_exposition.scss */
+/* line 71, ../sass/_exposition.scss */
 input[type=email]:focus {
   box-shadow: 0 0 5px #1c9ded;
   padding: 3px 0px 3px 13px;
@@ -246,24 +265,113 @@ input[type=email]:focus {
   border: 1px solid #1c9ded;
 }
 
-/* line 68, ../sass/_exposition.scss */
+/* line 78, ../sass/_exposition.scss */
 input[type=submit] {
-  background-color: #8de9f7;
+  background-color: #1c9ded;
   border-radius: 30px;
   border: none;
   padding: 7px 20px 7px 20px;
   color: white;
   position: relative;
-  top: -3px;
-  font-size: 12pt;
+  top: -2px;
 }
 
-/* line 79, ../sass/_exposition.scss */
+/* line 89, ../sass/_exposition.scss */
+#erase {
+  font-size: 8pt;
+  background-color: #bdf2fa;
+  padding: 2px 5px 2px 5px;
+}
+
+/* line 95, ../sass/_exposition.scss */
 input[type=submit]:hover {
   background-color: #5de0f4;
 }
 
-/* line 83, ../sass/_exposition.scss */
+/* line 99, ../sass/_exposition.scss */
 input[type=submit]:active {
   background-color: #2ed7f0;
+}
+
+/* line 104, ../sass/_exposition.scss */
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+/* line 108, ../sass/_exposition.scss */
+#start-button {
+  display: none;
+}
+
+/* line 112, ../sass/_exposition.scss */
+.regular-checkbox + label {
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 9px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 122, ../sass/_exposition.scss */
+.regular-checkbox + label:active, .regular-checkbox:checked + label:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* line 126, ../sass/_exposition.scss */
+.regular-checkbox:checked + label {
+  background-color: #e9ecee;
+  border: 1px solid #adb8c0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  color: #99a1a7;
+}
+
+/* line 133, ../sass/_exposition.scss */
+.regular-checkbox:checked + label:after {
+  content: '\2714';
+  font-size: 14px;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  color: #99a1a7;
+}
+
+/* line 142, ../sass/_exposition.scss */
+.big-checkbox + label {
+  padding: 18px;
+}
+
+/* line 146, ../sass/_exposition.scss */
+.big-checkbox:checked + label:after {
+  font-size: 28px;
+  left: 6px;
+}
+
+/* line 151, ../sass/_exposition.scss */
+.tag {
+  font-family: Arial, sans-serif;
+  width: 200px;
+  position: relative;
+  top: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  float: left;
+}
+
+/* line 162, ../sass/_exposition.scss */
+.consent-box {
+  width: 30%;
+  margin: 0px auto;
+}
+
+/* line 167, ../sass/_exposition.scss */
+#incentive-container {
+  display: none;
+}
+
+/* line 171, ../sass/_exposition.scss */
+#formdata {
+  font-family: monospace;
 }

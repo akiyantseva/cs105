@@ -22,6 +22,12 @@ form {
 	font-style: italic;
 }
 
+.time-info {
+	font-size: 16pt;
+	font-weight: 300;
+	color: darken($skyblue, 30%);
+}
+
 form:hover {
 	background-color: lighten($nightblue, 35%);
 }

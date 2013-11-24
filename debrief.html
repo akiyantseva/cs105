@@ -17,6 +17,7 @@
         <![endif]-->
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/jquery-1.10.1.min.js"></script>
 
     </head>
 
@@ -45,6 +46,13 @@
 
         <p> However, it is true that <strong> no actual data has been stored </strong> &#8211; only a "true" or "false" value has been recorded representing whether information was provided or ommitted for a certain field.</p>
 
+        <br/> 
+        <p class ="tiny-text">This is what your data looks like to us: </p>
+        <script>
+        documet.write(completedForms);
+        </script> 
+
+
         <p class = "large-text"> If you would like to be notified of the results of this study, please enter your e-mail (this time it will actually be recorded!):
 
         <input type="email" pattern="[^ @]*@[^ @]*" value="">
@@ -59,11 +67,9 @@
 
     </div> <!-- end container div -->  
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
+    <script src="js/logic.js"></script>
 
     </body>
 </html>

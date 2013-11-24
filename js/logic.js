@@ -12,7 +12,10 @@ $('form').keypress(function (e) {
     $.ajax({
             type: "GET",
             url: "survey.php",
-            data: "topic=" + $('#current-form .topic').attr("topic") + "\u0026response=" + $('#current-form .response').val(),
+            data: "topic=" + $('#current-form .info').attr("topic") 
+            + "\u0026response=" + $('#current-form .response').val() 
+            + "\u0026mob=" + $('#current-form .info').attr("mob") 
+            + "\u0026time=" + $('#current-form .info').attr("time"),
             success: nextForm
         })
     }

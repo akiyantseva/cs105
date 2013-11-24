@@ -46,5 +46,5 @@
             $("#current-form *").replaceWith($("#finish-survey"));
         }
 
-    // close keypress on enter
+    // close function
     }

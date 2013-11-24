@@ -10,7 +10,7 @@ $('form').keypress(function (e) {
 
     // ajax send topic and response to php
     $.ajax({
-            type: "GET",
+            type: "POST",
             url: "survey.php",
             data: "topic=" + $('#current-form .info').attr("topic") 
             + "\u0026response=" + $('#current-form .response').val() 

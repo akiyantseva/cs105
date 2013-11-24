@@ -16,6 +16,7 @@
               <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <![endif]-->
 
+        <script src="js/jquery-1.10.1.min.js"></script>
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
     </head>
@@ -51,11 +52,32 @@
 
         
 
-        <p class = "small-text">
-        <strong>No part of your data will be stored, even temporarily!</strong> 
+        <p class = "centered"> <span class = "very-large-text">
+        <strong>No part of your data will be stored, even temporarily!</strong> </span> <br/>
         Our system calculates character frequency on the client-side, meaning that anything you type in (for example "Alan") will immediately be converted into completely anonymized data (i.e. "A = 2 instances, L = 1 instance, N = 1 instance").</p>
 
-        <p class = "very-large-text centered"> <a href="survey.html"> Proceed to the survey! &#9654; </a> </p>
+        <div class = "consent-form tiny-text"> 
+            <p>
+            This is a research project being conducted by Sharon Zhou and Anna Kiyantseva at Harvard College. All are invited to participate in this project. Your participation in this research study is voluntary. You may choose not to participate. If you decide to participate in this research survey, you may withdraw at any time. If you decide not to participate in this study or if you withdrawl from participating at any time, you will not be penalized.
+            </p>
+            <p>
+            The procedure involves playing three word-based tasks and reporting your preferences and thoughts in a short survey after each. Your responses will be confidential and we do not collect identifying information such as your name, email address or IP address. We will keep your information confidential. All data is stored in a password protected electronic format. To help protect your confidentiality, the surveys will not contain information that will personally identify you. The results of this study will be used for scholarly purposes only.
+            </p>
+            <p>
+            If you have any questions about the research study, you will be able to access the researchers' contact information in the last screen. This research has been reviewed according to Harvard University IRB procedures for research involving human subjects.
+            <br/>
+            <strong>ELECTRONIC CONSENT: </strong> <em> Please select your choice below. </em>
+            </p>
+        </div>
+
+        <p id = "start-button" class = "very-large-text centered"> <a href="survey.html"> Proceed to the survey! &#9654; </a> </p>
+
+        <div class = "consent-box">
+            <div class ="tag"> I agree and wish to participate. </div>
+            <input type ="checkbox" value = "consent" id="consent-box" class="regular-checkbox big-checkbox"> <label for="consent-box"></label>
+        </div>
+
+
         </section>
 
 
@@ -63,10 +85,9 @@
 
     </div> <!-- end container div -->  
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/logic.js"></script>
 
 
     </body>

@@ -1,5 +1,6 @@
 counter = 1;
 completedForms = new Object();
+var intervalMS = 60000;
 
 topic = [];
 response = [];
@@ -40,9 +41,26 @@ if (timeMode !== 1) {
 }
 else {
     $(".time-info").show();
+    setTimer();
 }
 
 });
+
+var setTimer = function() {
+    $(".time-info").html("You have <strong>" + 6 + "</strong> seconds left to answer.")
+    autotimer = setInterval(function(){
+            $(".time-info").html("You have <strong>" + intervalMS/10000 + "</strong> seconds left to answer.")
+            intervalMS -= 10000;
+    },1000);
+
+    autoadvance = setInterval(function(){
+        $("#current-form").submit();
+        intervalMS = 60000;
+    }, 7000);
+
+
+
+};
 
 $("#current-form").submit(function( event ) {
 //function nextForm() {
@@ -68,6 +86,12 @@ $("#current-form").submit(function( event ) {
     if (counter != 40 ) {
         event.preventDefault();
         $("#current-form *").replaceWith($("#"+counter));
+        if (timeMode === 1) {
+            window.clearInterval(autoadvance);
+            window.clearInterval(autotimer);
+            intervalMS = 60000;
+            setTimer();
+        }
         $("#"+counter + " input").focus();            
     }
     else {

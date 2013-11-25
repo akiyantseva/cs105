@@ -102,7 +102,6 @@ $('.consent-box input').click(function(){
 $('#continue-debrief').click(function(){
     $(".container").replaceWith($("#debrief"));
 
-    formdata = JSON.stringify(completedForms);
     outputdata = "";
 
     for(var formid in completedForms){

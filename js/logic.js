@@ -1,4 +1,4 @@
-counter = 1;
+counter = 0;
 completedForms = new Object();
 var intervalMS = 60000;
 
@@ -72,8 +72,12 @@ $("#current-form").submit(function( event ) {
     else {
         completed = false;
     }
+    
+    for (var key in Q.order[counter]){
+        num = parseInt(key,10); 
+    }
 
-    completedForms[counter] = completed;
+    completedForms[num] = completed;
     console.log(completedForms[counter]);
 
     topic[counter] = $('#current-form .info').attr("topic");
@@ -81,9 +85,7 @@ $("#current-form").submit(function( event ) {
     mob[counter] = $('#current-form .info').attr("mob");
     time[counter] = $('#current-form .info').attr("time"); 
 
-    counter ++;
-
-    if (counter != 40 ) {
+    if (counter < Q.order.length ) {
         event.preventDefault();
         $("#current-form *").replaceWith($("#"+counter));
         if (timeMode === 1) {
@@ -93,11 +95,15 @@ $("#current-form").submit(function( event ) {
             setTimer();
         }
         $("#"+counter + " input").focus();            
+        $("#current-form *").replaceWith($("#"+num));
+        $("#"+num + " input").focus();            
     }
     else {
         event.preventDefault();
         $("#current-form *").replaceWith($("#finish-survey"));
     }
+
+    counter++;
 
 });
 

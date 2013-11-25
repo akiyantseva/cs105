@@ -34,14 +34,14 @@
 
         <div id = "current-form">
 
-            <form id ="1">
-            <input type="hidden" class="info" name="info" topic="First Name" mob="2" time="5"/>
+            <form id ="1" action="survey.php" method="post">
+            <input type="hidden" name="topic" value="First Name"/>
             <label> First Name </label> <br/>
             <span class = "mob-info">X other people have answered this. </span>
-            <input type="text" autofocus="autofocus" class="response"/><br/>
-            <span class ="tiny-text">Press Enter to submit or skip.</span>
+            <input name="response" type="text" autofocus="autofocus"/><br/>
+            <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
             <span class = "time-info">You have X seconds left to answer. </span>
-
+            
             <input type="submit" style="position: absolute; left: -9999px"/>
             </form> 
 
@@ -49,140 +49,404 @@
 
         </section>
 
-    <div style = "display:none" class = "hidden-forms">
+    <div class = "hidden-forms">
 
-        <form id ="2">
-        <input type="hidden" class="info" name="info" topic="Last Name" mob="8" time="20"/>
+        <form id ="2" action="survey.php" method="post">
         <label> Last Name </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br/>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
 
         </form> 
 
-        <form id ="3">
-        <input type="hidden" class="info" name="info" topic="Email Address" mob="10" time="13"/>
+        <form id ="3" action="survey.php" method="post"> 
         <label> E-mail Address </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form> 
 
-        <form id ="4">
-        <input type="hidden" topic="Birth Month" class="topic" name="topic"/>
+        <form id ="4" action="survey.php" method="post">
         <label> Birth Month </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form> 
 
-        <form id ="5">
-        <input type="hidden" topic="Birth Year" class="topic" name="topic"/>
+        <form id ="5" action="survey.php" method="post">
         <label> Birth Year </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form> 
 
-        <form id ="6">
-        <input type="hidden" topic="Birth Date" class="topic" name="topic"/>
+        <form id ="6" action="survey.php" method="post">
         <label> Birth Date (MM/DD/YYYY) </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
-        <span class ="tiny-text">Press Enter to submit.</span>
+
         </form> 
         
-        <form id ="7">
-        <input type="hidden" topic="Age" class="topic" name="topic"/>
-        <label> Age </label> <br/>
+        <form id ="7" action="survey.php" method="post">
+        <label> Current Age </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form> 
 
-        <form id ="8">
-        <input type="hidden" topic="High School" class="topic" name="topic"/>
-        <label> Name of High School </label> <br/>
+        <form id ="8" action="survey.php" method="post">
+        <label> Name of Elementary School </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form> 
 
-        <form id ="9">
-        <input type="hidden" topic="University" class="topic" name="topic"/>
+        <form id ="9" action="survey.php" method="post">
         <label> Name of University (if attended; "none" if not) </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form> 
 
-        <form id ="10">
-        <input type="hidden" topic="Current Country" class="topic" name="topic"/>
+        <form id ="10" action="survey.php" method="post">
         <label> Name of Current Country</label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form> 
        
-        <form id ="11">
-        <input type="hidden" topic="Hometown Name" class="topic" name="topic"/>
+        <form id ="11" action="survey.php" method="post">
         <label> Hometown Name </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form>  
 
-        <form id ="12">
-        <input type="hidden" topic="Father's First Name" class="topic" name="topic"/>
+        <form id ="12" action="survey.php" method="post">
         <label> Father's First Name </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form> 
 
-        <form id ="13">
-        <input type="hidden" topic="Mother's First Name" class="topic" name="topic"/>
+        <form id ="13" action="survey.php" method="post">
         <label> Mother's First Name </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form> 
 
-        <form id ="14">
-        <input type="hidden" topic="Health Insurance Provider" class="topic" name="topic"/>
+        <form id ="14" action="survey.php" method="post">
         <label> Health Insurance Provider </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form> 
 
-        <form id ="15">
-        <input type="hidden" topic="Mother's Maiden Name" class="topic" name="topic"/>
+        <form id ="15" action="survey.php" method="post">
         <label> Mother's Maiden Name </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
-        <input name="response" type="text" autofocus="autofocus"/><br/>
-        <span class ="tiny-text">Press Enter to submit.</span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
         <span class = "time-info">You have X seconds left to answer. </span>
+
         </form> 
+
+        <form id ="16" action="survey.php" method="post">
+        <label> Your Initials </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="17" action="survey.php" method="post">
+        <label> City of Birth </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="18" action="survey.php" method="post">
+        <label> Country of Birth </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="19" action="survey.php" method="post">
+        <label> Mother's Initials </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="20" action="survey.php" method="post">
+        <label> Father's Initials </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="21" action="survey.php" method="post">
+        <label> Racial or Ethnic Idenficiation </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="22" action="survey.php" method="post">
+        <label> Nationality </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="23" action="survey.php" method="post">
+        <label> Approximate Hourly Income (without $ symbol)</label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="24" action="survey.php" method="post">
+        <label> Approximate Yearly Income (without $ symbol) </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="25" action="survey.php" method="post">
+        <label> Name of First Employer </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="26" action="survey.php" method="post">
+        <label> Name of Current Employer </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="27" action="survey.php" method="post">
+        <label> Current Job Title </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="28" action="survey.php" method="post">
+        <label> Current Operating System </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="29" action="survey.php" method="post">
+        <label> Favorite Clothing Brand </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="30" action="survey.php" method="post">
+        <label> Favorite Food </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="31" action="survey.php" method="post">
+        <label> Zip Code </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="32" action="survey.php" method="post">
+        <label> Street Name of Current Residence </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="33" action="survey.php" method="post">
+        <label> Location of Previous Residence </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="34" action="survey.php" method="post">
+        <label> Cell Phone Number </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="35" action="survey.php" method="post">
+        <label> Home Phone Number </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="36" action="survey.php" method="post">
+        <label> Current Date </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="37" action="survey.php" method="post">
+        <label> Last Four Digits of Credit Card Number </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="38" action="survey.php" method="post">
+        <label> Credit Card Expiration Date </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="39" action="survey.php" method="post">
+        <label> Gender </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="40" action="survey.php" method="post">
+        <label> Favorite City </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form>        
 
         <section id ="finish-survey">
         Thank you for completing our survey! 
         <br/>
-        <p class = "very-large-text centered"> <a href="debrief.html"><button id="finish-submit-button"> Continue &#9654; </button></a> </p>
+        <p class = "very-large-text centered"> <a id = "continue-debrief" href="#"> Continue &#9654; </a> </p>
         </section>
+
+        <div id ="debrief">
+
+             <section class = "exposition">
+
+            <p class = "very-large-text bright centered">Thank you so much! :D</p> 
+
+
+            <p class = "large-text"> As you may or may not have guessed, this survey was not actually not about character frequency... </p> <br/>
+
+
+            <p> It was about people's <strong> willingness to provide information </strong> of various levels of sensitivity either with or without notification of their peers' decisions. There were three different conditions in this study: <em> with </em> information about others' decisions and <em> without </em> this information, and with time pressure.Those in the <em> with </em> condition were given a prompt for each field informing them that "[X] other people have answered this". In reality, these amounts were entirely fictitious.</p>
+
+            <p class = "large-text dark centered"> However, it is true that <strong> no actual data has been stored </strong>: only a "true" or "false" value has been recorded for each field.</p> <br/>
+
+            <p class ="tiny-text">This is what your data looks like to us: <br/>
+
+            <span id ="formdata"></span> <br/>
+
+            This is all that will be stored in our system. If you would still like to erase this (this would make us very sad! D:), you may do so:
+            <input id = "erase" type="submit" value="Erase"/>
+
+            </p>
+
+            <p> If you would like to be notified of the results of this study, please enter your e-mail (this time it will actually be recorded!):
+
+            <input type="email" pattern="[^ @]*@[^ @]*" value=""> <input id = "submit-email" type="submit" value="Submit"/>
+
+            <br/>
+            Have general feedback? Write it here:
+            <textarea> 
+            </textarea>
+            <input id = "submit-feedback" type="submit" value="Submit Feedback"/>
+            <br/>
+
+            </p>
+
+            </section>
+        </div>
+
     </div>
 
 

@@ -2,22 +2,22 @@ Q = new Object();
 
 Q.not_sensitive = {
   
-  '1':"First Name",  
-  '4':"Birth Month"
+  "First Name": '1',  
+  "Birth Month": '4'
 
 }
 
 Q.somewhat_sensitive = {
   
-  '2':"Last Name",  
-  '5':"Birth Year"
+  "Last Name":'2',  
+  "Birth Year":'5'
 
 }
 
 Q.very_sensitive = {
   
-  '3':"Email Address",  
-  '5':"Birth Date"
+  "Email Address":'3',  
+  "Birth Date":'6'
 
 }
 
@@ -29,47 +29,55 @@ var extract = new Array();
 
 for (var i = 0; i < x; i++)
 {
-    extract.push(fetch_random(Q.not_sensitive));
-    extract.push(fetch_random(Q.somewhat_sensitive));
-    extract.push(fetch_random(Q.very_sensitive));
+    var not_sensitive = fetch_random(Q.not_sensitive);
+    extract.push(not_sensitive);
+    var somewhat_sensitive = fetch_random(Q.somewhat_sensitive);
+    extract.push(somewhat_sensitive);
+    var very_sensitive = fetch_random(Q.very_sensitive);
+    extract.push(very_sensitive);
 }
 
 Q.order = new Array();
 
+
 if (Q.current_sequence == 'Ascend') {
-	for (var i = 0; i < x; i+3)
-	{
+	for (var i = 0; i < x * 3 - 2; i += 3)
+	{ 
 		// not sensitive ones appear first and every third thereafter
-		Q.order.push(extract[i]);
+		Q.order[i] = extract[i];
 	}
-	for (var j = 1; j < x; j+3)
+
+	for (var j = 1; j < x * 3 - 1; j += 3)
 	{
 		// somewhat sensitive ones appear second and every third thereafter
-		Q.order.push(extract[j]);
+		Q.order[j] = extract[j];
 	}
-	for (var k = 2; k < x; k+3)
+
+	for (var k = 2; k < x * 3; k += 3)
 	{
-		// very sensitive ones appear second and every third thereafter
-		Q.order.push(extract[k]);
+		// very sensitive ones appear third and every third thereafter
+		Q.order[k] = extract[k];
 	}
 
 }
 
 if (Q.current_sequence == 'Descend' || 'Random') {
-	for (var i = 0; i < x; i+3)
+	for (var k = 2, i = 0; k < x * 3; i += 3, k += 3)
 	{
-		// very sensitive ones appear second and every third thereafter
-		Q.order.push(extract[k]);
+		// very sensitive ones appear first and every third thereafter
+		Q.order[i] = extract[k];
 	}
-	for (var j = 1; j < x; j+3)
+
+	for (var j = 1; j < x * 3 - 1; j += 3)
 	{
 		// somewhat sensitive ones appear second and every third thereafter
-		Q.order.push(extract[j]);
+		Q.order[j] = extract[j];
 	}
-	for (var k = 2; k < x; k+3)
+
+	for (var i = 0, k = 2; i < x * 3 - 2; i += 3, k += 3)
 	{
-		// not sensitive ones appear first and every third thereafter
-		Q.order.push(extract[i]);
+		// not sensitive ones appear third and every third thereafter
+		Q.order[k] = extract[i];
 	}
 
 	if (Q.current_sequence == 'Random') {
@@ -90,11 +98,23 @@ function fetch_random(obj) {
 }
 
 function shuffle(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-    return array;
+  var currentIndex = array.length
+    , temporaryValue
+    , randomIndex
+    ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }

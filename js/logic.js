@@ -1,4 +1,5 @@
 counter = 0;
+num = 0;
 completedForms = new Object();
 
 topic = [];
@@ -55,20 +56,19 @@ $("#current-form").submit(function( event ) {
         completed = false;
     }
     
-    for (var key in Q.order[counter]){
-        num = parseInt(key,10); 
-    }
+    num = parseInt(Q.order[counter],10);
 
     completedForms[num] = completed;
-    console.log(completedForms[counter]);
 
-    topic[counter] = $('#current-form .info').attr("topic");
-    response[counter] = $('#current-form .info').attr("response");
-    mob[counter] = $('#current-form .info').attr("mob");
-    time[counter] = $('#current-form .info').attr("time"); 
+    topic[num] = $("#"+num).attr("topic");
+    response[num] = completedForms[num];
+    mob[num] = mobMode;
+    time[num] = timeMode; 
 
-    if (counter < Q.order.length ) {
+    if (counter < Q.order.length - 1 ) {
         event.preventDefault();
+        counter++;
+        num = parseInt(Q.order[counter],10);
         $("#current-form *").replaceWith($("#"+num));
         $("#"+num + " input").focus();            
     }
@@ -76,8 +76,6 @@ $("#current-form").submit(function( event ) {
         event.preventDefault();
         $("#current-form *").replaceWith($("#finish-survey"));
     }
-
-    counter++;
 
 });
 

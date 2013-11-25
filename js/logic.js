@@ -1,6 +1,7 @@
 counter = 0;
 num = 0;
 completedForms = new Object();
+var intervalMS = 60000;
 
 topic = [];
 response = [];
@@ -41,12 +42,29 @@ if (timeMode !== 1) {
 }
 else {
     $(".time-info").show();
+    setTimer();
 }
 
 });
 
+var setTimer = function() {
+    $(".time-info").html("You have <strong>" + 6 + "</strong> seconds left to answer.")
+    autotimer = setInterval(function(){
+            $(".time-info").html("You have <strong>" + intervalMS/10000 + "</strong> seconds left to answer.")
+            intervalMS -= 10000;
+    },1000);
+
+    autoadvance = setInterval(function(){
+        $("#current-form").submit();
+        intervalMS = 60000;
+    }, 7000);
+
+
+
+};
+
 $("#current-form").submit(function( event ) {
-//function nextForm() {
+    
     completed = new Boolean;
 
     if ( $("#current-form input").val() !== "" ) {
@@ -60,17 +78,23 @@ $("#current-form").submit(function( event ) {
 
     completedForms[num] = completed;
 
-    topic[num] = $("#"+num).attr("topic");
-    response[num] = completedForms[num];
+    topic[num] = num;
+    response[num] = completed;
     mob[num] = mobMode;
     time[num] = timeMode; 
 
-    if (counter < Q.order.length - 1 ) {
+    if (counter < Q.order.length) {
         event.preventDefault();
         counter++;
         num = parseInt(Q.order[counter],10);
         $("#current-form *").replaceWith($("#"+num));
-        $("#"+num + " input").focus();            
+        if (timeMode === 1) {
+            window.clearInterval(autoadvance);
+            window.clearInterval(autotimer);
+            intervalMS = 60000;
+            setTimer();
+        }
+        $("#"+num + " input").focus();                      
     }
     else {
         event.preventDefault();
@@ -78,18 +102,6 @@ $("#current-form").submit(function( event ) {
     }
 
 });
-
-$('#finish-submit-button').click(function( event ) {
-    $.ajax({
-            type: "POST",
-            url: "survey.php",
-            data: "topic=" + $topic 
-            + "\u0026response=" + $response
-            + "\u0026mob=" + $mob 
-            + "\u0026time=" + $time,
-        })
-});
-
 
 $('.consent-box input').click(function(){
     if ($("#consent-box").is (':checked'))
@@ -102,6 +114,15 @@ $('.consent-box input').click(function(){
 });
 
 $('#continue-debrief').click(function(){
+       $.ajax({
+            type: "POST",
+            url: "survey.php",
+            data: "topic=" + topic 
+            + "\u0026response=" + response
+            + "\u0026mob=" + mob 
+            + "\u0026time=" + time,
+        })
+
     $(".container").replaceWith($("#debrief"));
 
     outputdata = "";

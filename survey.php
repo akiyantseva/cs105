@@ -7,8 +7,8 @@
     $uid = $_SESSION["id"];
     
     // store ajax post variables
-    $total_topic = $_POST["topic"];
-    $total_response = $_POST["response"];
+    $total_topic = intval($_POST["topic"]);
+    $total_response = intval($_POST["response"]);
     $total_mob = intval($_POST["mob"]);
     $total_time = intval($_POST["time"]);
 

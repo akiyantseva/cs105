@@ -34,9 +34,8 @@
 
         <div id = "current-form">
 
-            <form id ="1" action="survey.php" method="post" topic="First Name">
-            <input type="hidden" name="topic" value="First Name"/>
-            <label> First Name </label> <br/>
+            <form id ="blank">
+            <label> Ready...? </label> <br/>
             <span class = "mob-info">X other people have answered this. </span>
             <input name="response" type="text" autofocus="autofocus"/><br/>
             <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
@@ -51,7 +50,16 @@
 
     <div class = "hidden-forms">
 
-        <form id ="2" action="survey.php" method="post">
+        <form id ="1">
+        <label> First Name </label> <br/>
+        <span class = "mob-info">X other people have answered this. </span>
+        <input type="text"><br/>
+        <span class = "tiny-text">Press Enter to skip OR submit.</span> <br/>
+        <span class = "time-info">You have X seconds left to answer. </span>
+
+        </form> 
+
+        <form id ="2">
         <label> Last Name </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
         <input type="text"><br/>
@@ -60,7 +68,7 @@
 
         </form> 
 
-        <form id ="3" action="survey.php" method="post"> 
+        <form id ="3"> 
         <label> E-mail Address </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
         <input type="text"><br>
@@ -69,7 +77,7 @@
 
         </form> 
 
-        <form id ="4" action="survey.php" method="post">
+        <form id ="4">
         <label> Birth Month </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
         <input type="text"><br>
@@ -78,7 +86,7 @@
 
         </form> 
 
-        <form id ="5" action="survey.php" method="post">
+        <form id ="5">
         <label> Birth Year </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
         <input type="text"><br>
@@ -87,7 +95,7 @@
 
         </form> 
 
-        <form id ="6" action="survey.php" method="post">
+        <form id ="6">
         <label> Birth Date (MM/DD/YYYY) </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
         <input type="text"><br>
@@ -96,7 +104,7 @@
 
         </form> 
         
-        <form id ="7" action="survey.php" method="post">
+        <form id ="7">
         <label> Current Age </label> <br/>
         <span class = "mob-info">X other people have answered this. </span>
         <input type="text"><br>

@@ -1,4 +1,4 @@
-Q = {};
+Q = new Object();
 
 Q.not_sensitive = {
   
@@ -25,45 +25,51 @@ Q.sequence = shuffle(['Ascend','Descend','Random']);
 Q.current_sequence = Q.sequence[0];
 
 var x = 1;
-var extract = [];
+var extract = new Array();
 
 for (var i = 0; i < x; i++)
 {
-	extract[i].not_sensitive = fetch_random(Q.not_sensitive);
-	extract[i].somewhat_sensitive = fetch_random(Q.somewhat_sensitive);
-	extract[i].very_sensitive = fetch_random(Q.very_sensitive);
+    extract.push(fetch_random(Q.not_sensitive));
+    extract.push(fetch_random(Q.somewhat_sensitive));
+    extract.push(fetch_random(Q.very_sensitive));
 }
 
-Q.order = [];
+Q.order = new Array();
 
 if (Q.current_sequence == 'Ascend') {
-	for (var i = 0; i < x; i++)
+	for (var i = 0; i < x; i+3)
 	{
-		Q.order[i] = extract[i].not_sensitive;
+		// not sensitive ones appear first and every third thereafter
+		Q.order.push(extract[i]);
 	}
-	for (var j = 0; j < x; j++)
+	for (var j = 1; j < x; j+3)
 	{
-		Q.order[i + x] = extract[i].somewhat_sensitive;
+		// somewhat sensitive ones appear second and every third thereafter
+		Q.order.push(extract[j]);
 	}
-	for (var k = 0; k < x; k++)
+	for (var k = 2; k < x; k+3)
 	{
-		Q.order[i + 2x] = extract[i].very_sensitive;
+		// very sensitive ones appear second and every third thereafter
+		Q.order.push(extract[k]);
 	}
 
 }
 
 if (Q.current_sequence == 'Descend' || 'Random') {
-	for (var i = 0; i < x; i++)
+	for (var i = 0; i < x; i+3)
 	{
-		Q.order[i] = extract[i].very_sensitive;
+		// very sensitive ones appear second and every third thereafter
+		Q.order.push(extract[k]);
 	}
-	for (var j = 0; j < x; j++)
+	for (var j = 1; j < x; j+3)
 	{
-		Q.order[i + x] = extract[i].somewhat_sensitive;
+		// somewhat sensitive ones appear second and every third thereafter
+		Q.order.push(extract[j]);
 	}
-	for (var k = 0; k < x; k++)
+	for (var k = 2; k < x; k+3)
 	{
-		Q.order[i + 2x] = extract[i].not_sensitive;
+		// not sensitive ones appear first and every third thereafter
+		Q.order.push(extract[i]);
 	}
 
 	if (Q.current_sequence == 'Random') {

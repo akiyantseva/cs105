@@ -54,18 +54,18 @@ $("#current-form").submit(function( event ) {
     else {
         completed = false;
     }
+    
+    for (var key in Q.order[counter]){
+        num = parseInt(key,10); 
+    }
 
-    completedForms[counter] = completed;
+    completedForms[num] = completed;
     console.log(completedForms[counter]);
 
     topic[counter] = $('#current-form .info').attr("topic");
     response[counter] = $('#current-form .info').attr("response");
     mob[counter] = $('#current-form .info').attr("mob");
     time[counter] = $('#current-form .info').attr("time"); 
-
-    for (var key in Q.order[counter]){
-        num = parseInt(key,10); 
-    }
 
     if (counter < Q.order.length ) {
         event.preventDefault();

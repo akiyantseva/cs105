@@ -2,6 +2,8 @@ counter = 0;
 num = 0;
 var intervalMS = 60000;
 
+mobamount = [];
+
 topic = [];
 response = [];
 mob = [];
@@ -11,30 +13,13 @@ sensitivity = [];
 mobMode = 1;
 timeMode = 1;
 
-/*// on enter
-$('form').keypress(function (e) {
-    if (e.which == 13) {
-
-    // ajax send info to php
-    $.ajax({
-            type: "POST",
-            url: "survey.php",
-            data: "topic=" + $('#current-form .info').attr("topic") 
-            + "\u0026response=" + $('#current-form .response').val() 
-            + "\u0026mob=" + $('#current-form .info').attr("mob") 
-            + "\u0026time=" + $('#current-form .info').attr("time"),
-            success: nextForm
-        })
-    };
-});*/
-
-
 $(function() {
 if (mobMode !== 1) {
     $(".mob-info").hide();
 }
 else {
     $(".mob-info").show();
+    setMob();
 }
 
 if (timeMode !== 1) {
@@ -58,14 +43,15 @@ var setTimer = function() {
         $("#current-form").submit();
         intervalMS = 60000;
     }, 7000);
+};
 
-
-
+var setMob = function() {
+    mobamount[counter] = Math.floor((Math.random()*100)+1); 
+    $(".mob-info").html("<strong>" + mobamount[counter] + "</strong> other people have answered this field.");
 };
 
 var beginSurvey = function() {
-    num = parseInt(Q.order[counter],10);
-    $("#current-form").html($("#"+num));
+    $("#current-form").submit();
 };
 
 $("#current-form").submit(function( event ) {
@@ -99,19 +85,22 @@ $("#current-form").submit(function( event ) {
         event.preventDefault();
         counter++;
         num = parseInt(Q.order[counter],10);
-        $("#current-form *").replaceWith($("#"+num));
+        $("#current-form").html($("#"+num));
         if (timeMode === 1) {
             window.clearInterval(autoadvance);
             window.clearInterval(autotimer);
             intervalMS = 60000;
             setTimer();
         }
+        if (mobMode === 1) {
+            setMob();
+        }
         $("#"+num + " input").focus();
         questions_num = Q.order.length;                      
     }
     else {
         event.preventDefault();
-        $("#current-form *").replaceWith($("#finish-survey"));
+        $("#current-form").html($("#finish-survey"));
     }
 
 });
@@ -134,6 +123,7 @@ $('#continue-debrief').click(function(){
             + "\u0026response=" + response
             + "\u0026mob=" + mob 
             + "\u0026time=" + time
+            + "\u0026mobamount=" + mobamount
             + "\u0026sensitivity=" + sensitivity
             + "\u0026questions_num=" + questions_num,
         })

@@ -9,6 +9,7 @@
     $uid = $_SESSION["id"];
     // store ajax post variables
     $total_topic = $_POST["topic"];
+    $total_mobamount = $_POST["mobamount"];
     $total_response = $_POST["response"];
     $total_mob = $_POST["mob"];
     $total_time = $_POST["time"];
@@ -19,10 +20,11 @@
     {
         $topic = intval($total_topic[$i]);
         $response = intval($total_response[$i]);
+        $mobamount = intval($total_mobamount[$i]);
         $mob = intval($total_mob[$i]);
         $time = intval($total_time[$i]);
         $sensitivity = $total_sensitivity[$i];        
-        $query = "INSERT INTO question (uid, topic, mob, time, response, sensitivity) VALUES ('$uid', '$topic', '$mob', '$time', '$response', '$sensitivity');";
+        $query = "INSERT INTO question (uid, topic, mob, time, response, sensitivity, mobamount) VALUES ('$uid', '$topic', '$mob', '$time', '$response', '$sensitivity', '$mobamount');";
         $result = mysql_query($query); 
     }
     /*// if didn't respond 

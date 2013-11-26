@@ -4,21 +4,24 @@
     mysql_connect("localhost", "cs105") or die(mysql_error()); 
     mysql_select_db("cs105") or die(mysql_error()); 
 
+    var_dump($_POST);
+
     $uid = $_SESSION["id"];
-    
     // store ajax post variables
-    $total_topic = intval($_POST["topic"]);
-    $total_response = intval($_POST["response"]);
-    $total_mob = intval($_POST["mob"]);
-    $total_time = intval($_POST["time"]);
+    $total_topic = $_POST["topic"];
+    $total_response = $_POST["response"];
+    $total_mob = $_POST["mob"];
+    $total_time = $_POST["time"];
+    $total_sensitivity = $_POST["sensitivity"]
 
     for ($i = 1; $i <= 16; $i++)
     {
-        $topic = $total_topic[$i];
-        $response = $total_response[$i];
-        $mob = $total_mob[$i];
-        $time = $total_time[$i];        
-        $query = "INSERT INTO question (uid, topic, answered, mob, time, response) VALUES ('$uid', '$topic', 0, '$mob', '$time', '$response');";
+        $topic = intval($total_topic[$i]);
+        $response = intval($total_response[$i]);
+        $mob = intval($total_mob[$i]);
+        $time = intval($total_time[$i]);
+        $sensitivity = $total_sensitivity[$i];        
+        $query = "INSERT INTO question (uid, topic, mob, time, response, sensitivity) VALUES ('$uid', '$topic', '$mob', '$time', '$response', '$sensitivity');";
         $result = mysql_query($query); 
     }
     /*// if didn't respond 

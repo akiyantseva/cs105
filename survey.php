@@ -12,9 +12,10 @@
     $total_response = $_POST["response"];
     $total_mob = $_POST["mob"];
     $total_time = $_POST["time"];
-    $total_sensitivity = $_POST["sensitivity"]
+    $total_sensitivity = $_POST["sensitivity"];
+    $num = $_POST["num"];
 
-    for ($i = 1; $i <= 16; $i++)
+    for ($i = 0; $i < $num; $i++)
     {
         $topic = intval($total_topic[$i]);
         $response = intval($total_response[$i]);

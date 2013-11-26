@@ -7,7 +7,6 @@ response = [];
 mob = [];
 time = [];
 sensitivity = [];
-questions_num = Q.order.length;
 
 mobMode = 1;
 timeMode = 1;
@@ -74,10 +73,10 @@ $("#current-form").submit(function( event ) {
     completed = new Boolean;
 
     if ( $("#current-form input").val() !== "" ) {
-        completed = true;
+        completed = 1;
     }
     else {
-        completed = false;
+        completed = 0;
     }
     
     num = parseInt(Q.order[counter],10);
@@ -86,7 +85,15 @@ $("#current-form").submit(function( event ) {
     response[counter] = completed;
     mob[counter] = mobMode;
     time[counter] = timeMode;
-    sensitivity[counter] = Q.current_sequence;
+    if (Q.current_sequence == 'Ascend') {
+        sensitivity[counter] = 'a';
+    }
+    if (Q.current_sequence == 'Descend') {
+        sensitivity[counter] = 'd';
+    }
+    if (Q.current_sequence == 'Random') {
+        sensitivity[counter] = 'r';
+    }
 
     if (counter < Q.order.length - 1) {
         event.preventDefault();
@@ -99,7 +106,8 @@ $("#current-form").submit(function( event ) {
             intervalMS = 60000;
             setTimer();
         }
-        $("#"+num + " input").focus();                      
+        $("#"+num + " input").focus();
+        questions_num = Q.order.length;                      
     }
     else {
         event.preventDefault();
@@ -127,15 +135,15 @@ $('#continue-debrief').click(function(){
             + "\u0026mob=" + mob 
             + "\u0026time=" + time
             + "\u0026sensitivity=" + sensitivity
-            + "\u0026num=" + questions_num,
+            + "\u0026questions_num=" + questions_num,
         })
 
     $(".container").replaceWith($("#debrief"));
 
     outputdata = "";
 
-    for(var formid in completedForms){
-        outputdata += formid + ': ' + completedForms[formid]+'; ';
+    for(var formid in response){
+        outputdata += formid + ': ' + response[formid]+'; ';
     }
     $("#formdata").append(outputdata);
 });

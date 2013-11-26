@@ -13,7 +13,7 @@
     $total_mob = $_POST["mob"];
     $total_time = $_POST["time"];
     $total_sensitivity = $_POST["sensitivity"];
-    $num = $_POST["num"];
+    $num = $_POST["questions_num"];
 
     for ($i = 0; $i < $num; $i++)
     {

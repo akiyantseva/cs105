@@ -4,20 +4,54 @@ Q.not_sensitive = {
   
   "First Name": '1',  
   "Birth Month": '4'
+  "Name of Elementary School":'8',
+  "Name of University":'9',
+  "Name of Current Country":'10',
+  "Father's First Name":'12',
+  "Mother's First Name":'13',
+  "Your Initials":'16',
+  "Mother's Initials":'19',
+  "Father's Initials":'20',
+  "Nationality":'22',
+  "Name of First Employer":'25',
+  "Current Operating System":'28',
+  "Favorite Clothing Brand":'29',
+  "Favorite Food":'30',
+  "Current Date":'36',
+  "Gender":'39',
+  "Favorite City":'40',
 
 }
 
 Q.somewhat_sensitive = {
   
   "Last Name":'2',  
-  "Birth Year":'5'
+  "Birth Year":'5',
+  "Current Age":'7',
+  "Hometown Name":'11',
+  "Health Insurance Provider":'14',
+  "City of Birth":'17',
+  "Country of Birth":'18',
+  "Racial or Ethnic Identification":'21',
+  "Approximate Hourly Income":'23',
+  "Approximate Yearly Income":'24',
+  "Name of Current Employer":'26',
+  "Current Job Title":'27',
+  "Location of Previous Residence":'33',
 
 }
 
 Q.very_sensitive = {
   
   "Email Address":'3',  
-  "Birth Date":'6'
+  "Birth Date":'6',
+  "Mother's Maiden Name":'15',
+  "Zip Code":'31',
+  "Street Name of Current Residence":'32',
+  "Cell Phone Number":'34',
+  "Home Phone Number":'35',
+  "Last Four Digits of Credit Card Number":'37',
+  "Credit Card Expiration Date":'38',
 
 }
 

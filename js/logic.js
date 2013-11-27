@@ -103,6 +103,13 @@ $("#current-form").submit(function( event ) {
             intervalMS = 60000;
             setTimer();
         }
+        // fixed timeMode statement follows
+        // if (timeMode === 1 && counter < Q.order.length - 1) {
+        //     window.clearInterval(autoadvance);
+        //     window.clearInterval(autotimer);
+        //     intervalMS = 60000;
+        //     setTimer();
+        // }
         if (mobMode === 1) {
             setMob();
         }

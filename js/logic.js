@@ -11,8 +11,8 @@ mob = [];
 time = [];
 sensitivity = [];
 
-mobMode = 1;
-timeMode = 1;
+mobMode = Math.floor(Math.random() + 0.5);
+timeMode = Math.floor(Math.random() + 0.5);
 
 $(function() {
 if (mobMode !== 1) {
@@ -95,31 +95,27 @@ $("#current-form").submit(function( event ) {
 
     if (counter < Q.order.length) {
         event.preventDefault();
-        num = parseInt(Q.order[counter+1],10);
+        counter++;
+        num = parseInt(Q.order[counter],10);
         $("#current-form").html($("#"+num));
-        if (timeMode === 1) {
-            window.clearInterval(autoadvance);
-            window.clearInterval(autotimer);
-            intervalMS = 60000;
-            setTimer();
-        }
-        // fixed timeMode statement follows
-        // if (timeMode === 1 && counter < Q.order.length - 1) {
-        //     window.clearInterval(autoadvance);
-        //     window.clearInterval(autotimer);
-        //     intervalMS = 60000;
-        //     setTimer();
-        // }
+            if (timeMode === 1) {
+             window.clearInterval(autoadvance);
+             window.clearInterval(autotimer);
+             intervalMS = 60000;
+             setTimer();
+            }
         if (mobMode === 1) {
             setMob();
         }
         $("#"+num + " input").focus();
+        if (counter == Q.order.length) {
+            $("#current-form").html($("#finish-survey"));
+        }
     }
     else {
         event.preventDefault();
         $("#current-form").html($("#finish-survey"));
     }
-    counter++;
 
 });
 

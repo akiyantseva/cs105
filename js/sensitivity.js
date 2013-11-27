@@ -58,17 +58,44 @@ Q.very_sensitive = {
 Q.sequence = shuffle(['Ascend','Descend','Random']);
 Q.current_sequence = Q.sequence[0];
 
-var x = 1;
+var x = 5;
 var extract = new Array();
 
 for (var i = 0; i < x; i++)
 {
-    var not_sensitive = fetch_random(Q.not_sensitive);
-    extract.push(not_sensitive);
-    var somewhat_sensitive = fetch_random(Q.somewhat_sensitive);
-    extract.push(somewhat_sensitive);
-    var very_sensitive = fetch_random(Q.very_sensitive);
-    extract.push(very_sensitive);
+    var keys_not = Object.keys(Q.not_sensitive), length_not = keys_not.length;
+    var key_not = keys_not[Math.floor(Math.random() * length_not)];
+    while (key_not == undefined) {
+      key_not = keys_not[Math.floor(Math.random() * length_not)];
+    }
+    extract.push(Q.not_sensitive[key_not]);
+    delete Q.not_sensitive[key_not]; 
+
+    var keys_somewhat = Object.keys(Q.somewhat_sensitive), length_somewhat = keys_somewhat.length;
+    var key_somewhat = keys_somewhat[Math.floor(Math.random() * length_somewhat)];
+    while (key_somewhat == undefined) {
+      key_somewhat = keys_somewhat[Math.floor(Math.random() * length_somewhat)];
+    }
+    extract.push(Q.somewhat_sensitive[key_somewhat]);
+    delete Q.somewhat_sensitive[key_somewhat]; 
+   
+    var keys_very = Object.keys(Q.very_sensitive), length_very = keys_very.length;
+    var key_very = keys_very[Math.floor(Math.random() * length_very)];
+    while (key_very == undefined) {
+      keys_very = Object.keys(Q.very_sensitive), length_very = keys_very.length;
+    }
+    extract.push(Q.very_sensitive[key_very]);
+    delete Q.very_sensitive[key_very]; 
+
+    /*var not = fetch_random(Q.not_sensitive);
+    delete Q.not_sensitive[not]; 
+    extract.push(not);
+    var somewhat = fetch_random(Q.somewhat_sensitive);
+    delete Q.somewhat_sensitive[somewhat]; 
+    extract.push(somewhat);
+    var very = fetch_random(Q.very_sensitive);
+    delete Q.very_sensitive[very]; 
+    extract.push(very);*/
 }
 
 Q.order = new Array();

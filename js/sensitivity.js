@@ -3,7 +3,7 @@ Q = new Object();
 Q.not_sensitive = {
   
   "First Name": '1',  
-  "Birth Month": '4'
+  "Birth Month": '4',
   "Name of Elementary School":'8',
   "Name of University":'9',
   "Name of Current Country":'10',
@@ -19,7 +19,7 @@ Q.not_sensitive = {
   "Favorite Food":'30',
   "Current Date":'36',
   "Gender":'39',
-  "Favorite City":'40',
+  "Favorite City":'40'
 
 }
 
@@ -37,7 +37,7 @@ Q.somewhat_sensitive = {
   "Approximate Yearly Income":'24',
   "Name of Current Employer":'26',
   "Current Job Title":'27',
-  "Location of Previous Residence":'33',
+  "Location of Previous Residence":'33'
 
 }
 
@@ -51,7 +51,7 @@ Q.very_sensitive = {
   "Cell Phone Number":'34',
   "Home Phone Number":'35',
   "Last Four Digits of Credit Card Number":'37',
-  "Credit Card Expiration Date":'38',
+  "Credit Card Expiration Date":'38'
 
 }
 

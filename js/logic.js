@@ -1,6 +1,7 @@
 counter = 0;
 num = 0;
 var intervalMS = 60000;
+questions_num = Q.order.length;
 
 mobamount = [];
 
@@ -51,7 +52,18 @@ var setMob = function() {
 };
 
 var beginSurvey = function() {
-    $("#current-form").submit();
+        num = parseInt(Q.order[counter],10);
+        $("#current-form").html($("#"+num));
+        if (timeMode === 1) {
+            window.clearInterval(autoadvance);
+            window.clearInterval(autotimer);
+            intervalMS = 60000;
+            setTimer();
+        }
+        if (mobMode === 1) {
+            setMob();
+        }
+        $("#"+num + " input").focus();
 };
 
 $("#current-form").submit(function( event ) {
@@ -81,10 +93,9 @@ $("#current-form").submit(function( event ) {
         sensitivity[counter] = 'r';
     }
 
-    if (counter < Q.order.length - 1) {
+    if (counter < Q.order.length) {
         event.preventDefault();
-        counter++;
-        num = parseInt(Q.order[counter],10);
+        num = parseInt(Q.order[counter+1],10);
         $("#current-form").html($("#"+num));
         if (timeMode === 1) {
             window.clearInterval(autoadvance);
@@ -96,12 +107,12 @@ $("#current-form").submit(function( event ) {
             setMob();
         }
         $("#"+num + " input").focus();
-        questions_num = Q.order.length;                      
     }
     else {
         event.preventDefault();
         $("#current-form").html($("#finish-survey"));
     }
+    counter++;
 
 });
 
@@ -137,4 +148,17 @@ $('#continue-debrief').click(function(){
     }
     $("#formdata").append(outputdata);
 });
+
+/*$('#erase').click(function(){
+    $('#erase').css("color","gray");
+});*/
+
+/*$('#submit_email').click(function(){
+    var email = $('#entered_email').val();
+    $.ajax({
+        type: "POST",
+        url: "debrief.php",
+        data: "email=" + email,
+        })
+}); */
 

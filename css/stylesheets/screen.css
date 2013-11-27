@@ -283,6 +283,10 @@ input[type=submit] {
   padding: 2px 5px 2px 5px;
 }
 
+#erase:active {
+  background-color: gray;
+}
+
 /* line 95, ../sass/_exposition.scss */
 input[type=submit]:hover {
   background-color: #5de0f4;
